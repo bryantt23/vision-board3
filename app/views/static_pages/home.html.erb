@@ -1,12 +1,16 @@
 
-    <title>Home | Bryant's Webpage</title>
+<% provide(:title, "Home") %>
+
+<!-- <title>Home | Bryant's Webpage</title> -->
+<title><%= yield(:title) %> | Bryant's Webpage</title>
+
 <h1>Goals</h1>
-    	<p>I started The Odin Project in December. I want to become a web developer in 2-6 months :)</p>
+<p>I started The Odin Project in December. I want to become a web developer in 2-6 months :)</p>
 
-        <h2><%= link_to "Mini Goals", 'mini_goals' %></h2>
+<h2><%= link_to "Mini Goals", 'mini_goals' %></h2>
 
-        <div id="fencing">
+<div id="fencing">
 
-<%= link_to image_tag("fencing.jpg", alt: "Gryphon Fencing", class:"img-responsive" ),
-            'http://rubyonrails.org/'  %>
-        </div>
+  <%= link_to image_tag("fencing.jpg", alt: "Gryphon Fencing", class:"img-responsive" ),
+  'http://rubyonrails.org/'  %>
+</div>
