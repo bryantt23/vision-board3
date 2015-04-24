@@ -5,6 +5,6 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def mini-goals
+  def mini_goals
   end
 end

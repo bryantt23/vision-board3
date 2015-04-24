@@ -11,8 +11,8 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get mini-goals" do
-    get :mini-goals
+  test "should get mini_goals" do
+    get :mini_goals
     assert_response :success
   end
 
