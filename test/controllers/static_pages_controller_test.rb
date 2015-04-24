@@ -10,7 +10,8 @@ class StaticPagesControllerTest < ActionController::TestCase
   test "should get home" do
     get :home
     assert_response :success
-    assert_select "title", "Home | Bryant's Webpage"
+    assert_select "title", "Bryant's Webpage"
+    # assert_select "title", "Home | Bryant's Webpage"
   end
 
   test "should get mini_goals" do
