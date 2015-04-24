@@ -1,2 +1,10 @@
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<h1>About Me</h1>
+
+<p>Just here to learn Rails</p>
+
+
+<%= link_to image_tag("no_idea.jpg", alt: "image",  class:"img-responsive" ) %>
+        </div>
+
+<%= link_to "Home Page", root_path, class: "btn btn-primary" %>
+<%= link_to "Mini Goals", static_pages_mini_goals_path, class: "btn btn-default" %>
