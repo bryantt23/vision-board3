@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 
   def mini_goals
   end
+  
+  def contact
+  end
 end
