@@ -17,43 +17,25 @@
 //= require_tree .
 
 $(function(){
-  // $("#img").rotate(-7);
+
+// // this makes the dog image rotate continuously
+//   var angle = 0;
+//   setInterval(function(){
+//         angle+=.5;
+//        $("#no_idea_dog").rotate(angle);
+//   },50);
 
 
+  function fadeIn() {
+      jQuery("#no_idea_dog").fadeIn(5000);
+      fadeOut();
+  }
 
+  function fadeOut() {
+      jQuery("#no_idea_dog").fadeOut(5000);
+      fadeIn();
+  }
 
-  // $("#img").rotate({
-  //    bind:
-  //      {
-  //         mouseover : function() {
-  //             $(this).rotate({animateTo:-6})
-  //         },
-  //         mouseout : function() {
-  //             $(this).rotate({animateTo:0})
-  //         }
-  //      }
-  // });
-
-  var angle = 0;
-  setInterval(function(){
-        angle+=.5;
-       $("#no_idea_dog").rotate(angle);
-  },50);
-
-
-
-  // var value = 0
-  // $("#image").rotate({
-  //    bind:
-  //      {
-  //         click: function(){
-  //             value +=90;
-  //             $(this).rotate({ animateTo:value})
-  //         }
-  //      }
-  //
-  // });
-
-
+  fadeOut();
 
 });
