@@ -37,7 +37,7 @@ $(function(){
   var angle = 0;
   setInterval(function(){
         angle+=.5;
-       $("#rotateContainer").rotate(angle);
+       $("#no_idea_dog").rotate(angle);
   },50);
 
 
