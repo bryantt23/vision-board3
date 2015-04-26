@@ -21,52 +21,109 @@
 
 $(function(){
 
-  function startTimer(duration, display) {
-      var timer = duration, minutes, seconds;
-      setInterval(function () {
-          minutes = parseInt(timer / 60, 10);
-          seconds = parseInt(timer % 60, 10);
+  var interval;
+      var minutes = 25;
+      var seconds = 0;
 
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
+      // this triggers the countdown
+      // window.onload = function() {
+      //     countdown('countdown');
+      // }
 
-          display.text(minutes + ":" + seconds);
+      function countdown(element) {
+          interval = setInterval(function() {
+              var el = document.getElementById(element);
+              if(seconds == 0) {
+                  if(minutes == 0) {
+                      alert(el.innerHTML = "countdown's over!");
+                      clearInterval(interval);
+                      return;
+                  } else {
+                      minutes--;
+                      seconds = 60;
+                  }
+              }
+              if(minutes > 0) {
+                  var minute_text = minutes + (minutes > 1 ? ' minutes' : ' minute');
+              } else {
+                  var minute_text = '';
+              }
+              var second_text = seconds > 1 ? 'seconds' : 'second';
+              el.innerHTML = minute_text + ' ' + seconds + ' ' + second_text + ' remaining';
+              seconds--;
+          }, 1000);
+      }
 
-          if (--timer < 0) {
-              timer = duration;
+
+
+      var reset = document.getElementById('reset');
+      reset.onclick = function() {
+          minutes = 25;
+          seconds = 0;
+          clearInterval(interval);
+          interval = null;
+      }
+      var start = document.getElementById('start');
+
+      start.onclick = function() {
+          if (!interval) {
+              countdown('countdown');
           }
-      }, 1000);
-  }
+      }
 
-  jQuery(function ($) {
-      var fiveMinutes = 60 * 5,
-          display = $('#time');
-      startTimer(fiveMinutes, display);
-  });
 
-// timer using only plain javascript
-  function startTimer(duration, display) {
-      var timer = duration, minutes, seconds;
-      setInterval(function () {
-          minutes = parseInt(timer / 60, 10)
-          seconds = parseInt(timer % 60, 10);
 
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
+// // jquery timer
+//   function startTimer(duration, display) {
+//       var timer = duration, minutes, seconds;
+//       setInterval(function () {
+//           minutes = parseInt(timer / 60, 10);
+//           seconds = parseInt(timer % 60, 10);
+//
+//           minutes = minutes < 10 ? "0" + minutes : minutes;
+//           seconds = seconds < 10 ? "0" + seconds : seconds;
+//
+//           display.text(minutes + ":" + seconds);
+//
+//           if (--timer < 0) {
+//               timer = duration;
+//           }
+//       }, 1000);
+//   }
+//
+//   jQuery(function ($) {
+//       var fiveMinutes = 60 * 5,
+//           display = $('#time');
+//       startTimer(fiveMinutes, display);
+//   });
 
-          display.textContent = minutes + ":" + seconds;
 
-          if (--timer < 0) {
-              timer = duration;
-          }
-      }, 1000);
-  }
+// // timer using only plain javascript
+//   function startTimer(duration, display) {
+//       var timer = duration, minutes, seconds;
+//       setInterval(function () {
+//           minutes = parseInt(timer / 60, 10)
+//           seconds = parseInt(timer % 60, 10);
+//
+//           minutes = minutes < 10 ? "0" + minutes : minutes;
+//           seconds = seconds < 10 ? "0" + seconds : seconds;
+//
+//           display.textContent = minutes + ":" + seconds;
+//
+//           if (--timer < 0) {
+//               timer = duration;
+//           }
+//       }, 1000);
+//   }
+//
+//   window.onload = function () {
+//       var fiveMinutes = 60 * 5,
+//           display = document.querySelector('#time');
+//       startTimer(fiveMinutes, display);
+//   };
 
-  window.onload = function () {
-      var fiveMinutes = 60 * 5,
-          display = document.querySelector('#time');
-      startTimer(fiveMinutes, display);
-  };
+
+
 
 
   // code for the about page dog image
