@@ -21,31 +21,45 @@
 
 $(function(){
 
-  //   $("#no_idea_dog").rotate({
-  //    bind:
-  //      {
-  //         mouseover : function() {
-  //             $(this).rotate({animateTo:-90})
-  //         },
-  //         mouseout : function() {
-  //             $(this).rotate({animateTo:0})
-  //         }
-  //      }
-  //
-  // });
+  function startTimer(duration, display) {
+      var timer = duration, minutes, seconds;
+      setInterval(function () {
+          minutes = parseInt(timer / 60, 10)
+          seconds = parseInt(timer % 60, 10);
 
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
 
-  function fadeIn() {
-      jQuery("#no_idea_dog").fadeIn(5000);
-      fadeOut();
+          display.textContent = minutes + ":" + seconds;
+
+          if (--timer < 0) {
+              timer = duration;
+          }
+      }, 1000);
   }
 
-  function fadeOut() {
-      jQuery("#no_idea_dog").fadeOut(5000);
-      fadeIn();
-  }
+  window.onload = function () {
+      var fiveMinutes = 60 * 5,
+          display = document.querySelector('#time');
+      startTimer(fiveMinutes, display);
+  };
 
-  fadeOut();
+
+  // code for the about page dog image
+    function fadeIn() {
+        jQuery("#no_idea_dog").fadeIn(5000);
+        fadeOut();
+    }
+
+    function fadeOut() {
+        jQuery("#no_idea_dog").fadeOut(5000);
+        fadeIn();
+    }
+
+  // calls orginal method so it loops endlessly
+    fadeOut();
+
+
 
 
 });
