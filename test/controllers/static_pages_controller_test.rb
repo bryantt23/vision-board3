@@ -25,4 +25,12 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
     assert_select "title", "Contact | Bryant's Webpage"
   end
+
+  test "should get timer" do
+    get :timer
+    assert_response :success
+    assert_select "title", "Timer | Bryant's Webpage"
+  end
+
+
 end

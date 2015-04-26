@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  
+
   def about
   end
 
@@ -11,5 +11,9 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def timer
+  end
+
 
 end
