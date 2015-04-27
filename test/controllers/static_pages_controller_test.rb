@@ -32,5 +32,12 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", "Timer | Bryant's Webpage"
   end
 
+  test "gets resources" do
+    get :resources
+    assert_response :success
+    assert_select "title", "Resources | Bryant's Webpage"
+  end
+
+
 
 end

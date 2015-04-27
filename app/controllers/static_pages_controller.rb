@@ -15,5 +15,8 @@ class StaticPagesController < ApplicationController
   def timer
   end
 
+  def resources
+  end
+
 
 end
