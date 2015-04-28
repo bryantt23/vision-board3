@@ -6,9 +6,9 @@
 @import "bootstrap";
 
 
-body {
-  padding-bottom: 40px;
-}
+// body {
+//   padding-bottom: 40px;
+// }
 
 // . is for class
 .img-responsive {
@@ -22,3 +22,24 @@ body {
   margin-top: 10px;
   text-align:center;
 }
+
+html, body { height: 100%; margin: 0; }
+#container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -55px;
+}
+#footer, #push {
+  height: 55px;
+}
+// html, body { height: 100%; margin: 0; }
+// #container {
+//   min-height: 100%;
+//   height: auto !important;
+//   height: 100%;
+//   margin: 0 auto -55px;
+// }
+// #footer, #push {
+//   height: 55px;
+// }
