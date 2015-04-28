@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'timer' => 'static_pages#timer'
-  get 'resources' => 'static_pages#resources'
+  get 'resources' => 'static_pages#resources'  
+
+  resources :posts
 
 
 end
